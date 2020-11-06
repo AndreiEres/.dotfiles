@@ -1,0 +1,36 @@
+[user]
+name = Andrei Eres
+email = andrei.eres@ya.ru
+[core]
+  excludesfile = /Users/andreieres/.gitignore_global
+  pager = delta
+  # pager = diff-so-fancy | less --tabs=2 -RFX
+[delta]
+  plus-color = "#012800"
+  minus-color = "#340001"
+  syntax-theme = Github
+[interactive]
+  diffFilter = delta --color-only
+[color]
+  ui = true
+[filter "lfs"]
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+[alias]
+  lg = log --color --graph --pretty=format:'%C(green)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+# [diff-so-fancy]
+#   rulerWidth = 80
+# [color "diff-highlight"]
+#   oldNormal = red
+#   oldHighlight = red bold 52
+#   newNormal = green
+#   newHighlight = green bold 22
+# [color "diff"]
+#   meta = 11
+#   frag = magenta
+#   commit = yellow bold
+#   old = red
+#   new = green
+#   whitespace = red reverse
