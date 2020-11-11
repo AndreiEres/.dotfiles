@@ -1,0 +1,39 @@
+cask_args appdir: "/Applications"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/core"
+tap "homebrew/services"
+
+# Dev
+brew "hivemind"
+brew "kubectl"
+cask "google-cloud-sdk"
+brew "postgresql", restart_service: true
+brew "redis", restart_service: true
+# brew "yarn"
+# brew "jq"
+# brew "siege"
+# cask "sublime-merge"
+# cask "visual-studio-code"
+# cask "imageoptim"
+# brew "git"
+# brew "python"
+# brew "node"
+# cask "bitwarden"
+# cask "sublime-text"
+# cask "sourcetree"
+# cask "shuttle"
+# cask "docker"
+# cask "postman"
+
+# Tools
+cask "google-chrome"
+cask "appcleaner"
+cask "the-unarchiver"
+cask "tunnelbear"
+cask "transmission"
+cask "zoomus"
+
+# Mac App Store items
+brew "mas"
+mas "Telegram", id: 747648890
