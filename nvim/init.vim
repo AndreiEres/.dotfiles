@@ -1,6 +1,4 @@
 syntax on
-" let g:srcery_underline = 0
-" colorscheme srcery
 colorscheme solarized8_high
 
 set clipboard^=unnamed,unnamedplus
@@ -117,12 +115,13 @@ noremap <leader>0 :tablast<cr>
 imap jj <esc>
 imap jk <esc>
 imap kj <esc>
-noremap <leader>vi :tabe ~/.vimrc<CR>
-noremap <leader>S :source ~/.vimrc<CR>:call minpac#update()<CR>
+noremap <leader>vi :tabe ~/.config/nvim/init.vim<CR>
+noremap <leader>S :source ~/.config/nvim/init.vim<CR>:call minpac#update()<CR>
 noremap <leader>nh :noh<CR>
 noremap <leader>тр :noh<CR>
 tnoremap <ESC> <C-\><C-n><C-w><C-p>
 nnoremap <silent>K :ALEHover<CR>
+nnoremap <leader>de :ALEDetail<CR>
 nnoremap ]r :ALENextWrap<CR>
 nnoremap [r :ALEPreviousWrap<CR>
 nnoremap <F2> :ALERename<CR>
@@ -157,7 +156,7 @@ nnoremap <silent> <leader>gt :TestVisit<CR>
 " fzf mappings
 noremap <leader>o :Files<CR>
 noremap <leader>щ :Files<CR>
-noremap <C-b> :Buffers<CR>
+noremap <leader>b :Buffers<CR>
 noremap <leader>и :Buffers<CR>
 
 function! RenameFile()
@@ -175,40 +174,39 @@ packadd minpac
 call minpac#init()
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('dense-analysis/ale')
-call minpac#add('dyng/ctrlsf.vim')
-call minpac#add('elixir-editors/vim-elixir')
-call minpac#add('fatih/vim-go')
+call minpac#add('dyng/ctrlsf.vim') " Delete
+call minpac#add('elixir-editors/vim-elixir') " Delete
+call minpac#add('fatih/vim-go') " Delete
 call minpac#add('itchyny/lightline.vim')
 call minpac#add('janko-m/vim-test')
-call minpac#add('raimondi/delimitmate')
 call minpac#add('junegunn/fzf', { 'do': { -> fzf#install() } })
 call minpac#add('junegunn/fzf.vim')
-call minpac#add('justinmk/vim-sneak')
+call minpac#add('justinmk/vim-sneak') " Delete
 call minpac#add('k-takata/minpac', {'type': 'opt'})
 call minpac#add('leafgarland/typescript-vim')
+call minpac#add('lifepillar/vim-solarized8')
 call minpac#add('machakann/vim-highlightedyank')
 call minpac#add('maximbaz/lightline-ale')
 call minpac#add('maxmellon/vim-jsx-pretty')
 call minpac#add('pangloss/vim-javascript')
-call minpac#add('pbrisbin/vim-mkdir')
+call minpac#add('pbrisbin/vim-mkdir') " Delete
+call minpac#add('raimondi/delimitmate')
 call minpac#add('shougo/deoplete.nvim')
-call minpac#add('slim-template/vim-slim')
-" call minpac#add('srcery-colors/srcery-vim')
+call minpac#add('slim-template/vim-slim') " Delete
 call minpac#add('tomtom/tcomment_vim')
 call minpac#add('tpope/vim-bundler')
 call minpac#add('tpope/vim-dispatch')
 call minpac#add('tpope/vim-endwise')
 call minpac#add('tpope/vim-eunuch')
 call minpac#add('tpope/vim-fugitive')
-call minpac#add('tpope/vim-projectionist')
+call minpac#add('tpope/vim-projectionist') " Delete
 call minpac#add('tpope/vim-rails')
 call minpac#add('tpope/vim-rake')
 call minpac#add('tpope/vim-repeat')
 call minpac#add('tpope/vim-rhubarb')
 call minpac#add('tpope/vim-surround')
-call minpac#add('tpope/vim-unimpaired')
+call minpac#add('tpope/vim-unimpaired') " Delete
 call minpac#add('vim-ruby/vim-ruby')
-call minpac#add('lifepillar/vim-solarized8')
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
@@ -242,7 +240,8 @@ let g:lightline.active = {
 \     ['mode', 'paste'],
 \     ['gitbranch'],
 \     ['filename', 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok'],
-\   ]
+\   ],
+\   'right': [['lineinfo'], ['percent'], ['filetype']]
 \ }
 let g:lightline#ale#indicator_checking = "..."
 let g:lightline#ale#indicator_infos = "i:"
@@ -255,7 +254,7 @@ let g:ale_linters = {
 \   'typescript': ['tsserver', 'tslint', 'eslint'],
 \   'vue': ['eslint'],
 \   'eruby': ['erb'],
-\   'ruby': ['rubocop'],
+\   'ruby': ['rubocop, standardrb'],
 \   'python': ['flake8', 'pyls']
 \ }
 let g:ale_fixers = {
@@ -263,7 +262,7 @@ let g:ale_fixers = {
 \   'javascript': ['prettier'],
 \   'typescript': ['prettier'],
 \   'vue': ['prettier'],
-\   'ruby': ['rubocop'],
+\   'ruby': ['rubocop', 'standardrb'],
 \   'python': ['black', 'isort'],
 \   'css': ['prettier'],
 \   'html': ['prettier']

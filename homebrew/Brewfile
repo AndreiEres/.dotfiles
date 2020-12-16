@@ -8,23 +8,10 @@ tap "homebrew/services"
 brew "hivemind"
 brew "kubectl"
 cask "google-cloud-sdk"
+brew "sqlite"
+brew "ansible"
 brew "postgresql", restart_service: true
 brew "redis", restart_service: true
-# brew "yarn"
-# brew "jq"
-# brew "siege"
-# cask "sublime-merge"
-# cask "visual-studio-code"
-# cask "imageoptim"
-# brew "git"
-# brew "python"
-# brew "node"
-# cask "bitwarden"
-# cask "sublime-text"
-# cask "sourcetree"
-# cask "shuttle"
-# cask "docker"
-# cask "postman"
 
 # Tools
 cask "google-chrome"
@@ -33,7 +20,12 @@ cask "the-unarchiver"
 cask "tunnelbear"
 cask "transmission"
 cask "zoomus"
+cask "sublime-text"
+cask "sublime-merge"
+cask "visual-studio-code"
+cask "docker"
 
 # Mac App Store items
 brew "mas"
 mas "Telegram", id: 747648890
+mas "Flow", id: 1423210932

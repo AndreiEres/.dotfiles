@@ -1,3 +1,7 @@
+PROMPT='%F{cyan}%c %B$(git_branch)%b%f' # set the prompt value
+GREEN="\033[1;32m"
+NOCOLOR="\033[0m"
+
 # function to return current branch name while suppressing errors
 function git_branch() {
     branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
@@ -6,6 +10,22 @@ function git_branch() {
     else
         echo ''$branch' '
     fi
+}
+
+function deploy_feature_to_prod {
+  echo -e "${GREEN}> Checkout master${NOCOLOR}"
+  git checkout master
+  echo -e "${GREEN}> Pull origin master${NOCOLOR}"
+  git pull origin master
+  echo -e "${GREEN}> Add internal${NOCOLOR}"
+  git remote add internal git@gitlab-rnd.tcsbank.ru:tj-features/$1.git
+  sleep 15
+  echo -e "${GREEN}> Set internal url${NOCOLOR}"
+  git remote set-url internal git@gitlab-rnd.tcsbank.ru:tj-features/$1.git
+  sleep 15
+  echo -e "${GREEN}> Push internal master${NOCOLOR}"
+  git push internal master
+  echo -e "${GREEN}> All done${NOCOLOR}"
 }
 
 alias cat="bat"
@@ -23,6 +43,7 @@ alias gc="git commit"
 alias gcm="git commit -m"
 alias gd="git diff"
 alias go="git checkout "
+alias gco="git checkout "
 alias gull="git pull"
 alias gush="git push"
 alias hist="git lg"
@@ -31,13 +52,12 @@ alias yd="yarn dev"
 alias be="bundle exec"
 alias brails="bundle exec rails"
 alias where-localhost="ifconfig | grep 'inet ' | grep -v 127.0.0.1"
+alias venv.=". ./venv/bin/activate"
 
 setopt prompt_subst # allow command substitution inside the prompt
 setopt menucomplete
 
 zstyle ":completion:*" menu select=1 _complete _ignored _approximate
-
-PROMPT='%F{cyan}%c %B$(git_branch)%b%f' # set the prompt value
 
 export EDITOR="nvim"
 export LANG=en_US.UTF-8 # copy cyrillic text in vim

@@ -91,6 +91,48 @@
             }
           }
         }
+      },
+      "ansible": {
+        "version": "2.9.15",
+        "bottle": {
+          "cellar": ":any",
+          "prefix": "/usr/local",
+          "files": {
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/ansible-2.9.15.catalina.bottle.tar.gz",
+              "sha256": "61bac44c5ad225f9d507016517904b29f67cc7e62adcb2148c14da1013acf471"
+            },
+            "mojave": {
+              "url": "https://homebrew.bintray.com/bottles/ansible-2.9.15.mojave.bottle.tar.gz",
+              "sha256": "fe8b051d6d82169978464be3c91449906895c3d88a9e7dc0be6f37aef7df99c1"
+            },
+            "high_sierra": {
+              "url": "https://homebrew.bintray.com/bottles/ansible-2.9.15.high_sierra.bottle.tar.gz",
+              "sha256": "047026725fd12c752b2572f5f22755983da0839ebf8261ba221984e428b7b48a"
+            }
+          }
+        }
+      },
+      "sqlite": {
+        "version": "3.33.0",
+        "bottle": {
+          "cellar": ":any",
+          "prefix": "/usr/local",
+          "files": {
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/sqlite-3.33.0.catalina.bottle.tar.gz",
+              "sha256": "78566572373e0010a52729c1b41f7503f4e86acc67e7a37bafe091a6ddc36147"
+            },
+            "mojave": {
+              "url": "https://homebrew.bintray.com/bottles/sqlite-3.33.0.mojave.bottle.tar.gz",
+              "sha256": "0d4a34731923310528f3ca79418eb7149cf12eda3b3043e5ba11b040ca5f602f"
+            },
+            "high_sierra": {
+              "url": "https://homebrew.bintray.com/bottles/sqlite-3.33.0.high_sierra.bottle.tar.gz",
+              "sha256": "9fd2f150b96a7ca378f84e09a2715c7a87c1b95a3a3a241a25f57d22ab0be781"
+            }
+          }
+        }
       }
     },
     "cask": {
@@ -156,6 +198,42 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "sublime-text": {
+        "version": "3.211",
+        "options": {
+          "full_name": "sublime-text",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "sublime-merge": {
+        "version": "2038",
+        "options": {
+          "full_name": "sublime-merge",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "visual-studio-code": {
+        "version": "1.51.0",
+        "options": {
+          "full_name": "visual-studio-code",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "docker": {
+        "version": "2.5.0.1,49550",
+        "options": {
+          "full_name": "docker",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
       }
     },
     "tap": {
@@ -175,7 +253,11 @@
     "mas": {
       "Telegram": {
         "id": "747648890",
-        "version": "7.2"
+        "version": "7.2.4"
+      },
+      "Flow": {
+        "id": "1423210932",
+        "version": "2.3.1"
       }
     }
   },
@@ -188,6 +270,22 @@
         "CLT": "12.0.32.21",
         "Xcode": "12.1",
         "macOS": "10.15.7"
+      },
+      "big_sur": {
+        "HOMEBREW_VERSION": "2.5.9",
+        "HOMEBREW_PREFIX": "/usr/local",
+        "Homebrew/homebrew-core": "995d24a99101a3ffa8f9701d5adfd839f976409d",
+        "CLT": "12.0.32.21",
+        "Xcode": "12.2",
+        "macOS": "11.0.1"
+      },
+      "dunno": {
+        "HOMEBREW_VERSION": "2.5.9",
+        "HOMEBREW_PREFIX": "/usr/local",
+        "Homebrew/homebrew-core": "995d24a99101a3ffa8f9701d5adfd839f976409d",
+        "CLT": "12.0.32.21",
+        "Xcode": "12.2",
+        "macOS": "11.1"
       }
     }
   }
