@@ -3,14 +3,14 @@ name = Andrei Eres
 email = andrei.eres@ya.ru
 [core]
   excludesfile = /Users/andreieres/.gitignore_global
-  pager = delta
+  # pager = delta
   # pager = diff-so-fancy | less --tabs=2 -RFX
-[delta]
-  plus-color = "#012800"
-  minus-color = "#340001"
-  syntax-theme = Github
+# [delta]
+#   plus-color = "#012800"
+#   minus-color = "#340001"
+#   syntax-theme = Github
 [interactive]
-  diffFilter = delta --color-only
+  # diffFilter = delta --color-only
 [color]
   ui = true
 [filter "lfs"]

@@ -1,5 +1,13 @@
 syntax on
 colorscheme solarized8_high
+let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_invert_selection = 0
+let g:gruvbox_sign_column = 'bg0'
+colorscheme gruvbox
+" let g:srcery_underline = 0
+" colorscheme srcery
+
+hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 
 set clipboard^=unnamed,unnamedplus
 
@@ -71,8 +79,8 @@ if &compatible
 end
 
 if !has('gui_running')
-  set t_Co=8 t_md=
-  " set termguicolors
+  " set t_Co=8 t_md=
+  set termguicolors
 endif
 
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
@@ -93,6 +101,10 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile *.md        set filetype=markdown
   autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
   autocmd BufRead,BufNewFile *.tsx,*.jsx set filetype=typescript.tsx
+augroup END
+
+augroup TerminalStuff
+  autocmd TermOpen * setlocal nonumber norelativenumber
 augroup END
 
 " All necessary mappings
@@ -129,11 +141,6 @@ nnoremap <F12> :ALEGoToDefinition<CR>
 inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
-map f <Plug>Sneak_f
-map F <Plug>Sneak_F
-map t <Plug>Sneak_t
-map T <Plug>Sneak_T
-
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
@@ -159,6 +166,12 @@ noremap <leader>щ :Files<CR>
 noremap <leader>b :Buffers<CR>
 noremap <leader>и :Buffers<CR>
 
+" NERDTree
+" nnoremap <leader>n :NERDTreeFocus<CR>
+" nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
 function! RenameFile()
   let old_name = expand('%')
   let new_name = input('New file name: ', expand('%'), 'file')
@@ -174,38 +187,36 @@ packadd minpac
 call minpac#init()
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('dense-analysis/ale')
-call minpac#add('dyng/ctrlsf.vim') " Delete
-call minpac#add('elixir-editors/vim-elixir') " Delete
-call minpac#add('fatih/vim-go') " Delete
 call minpac#add('itchyny/lightline.vim')
 call minpac#add('janko-m/vim-test')
 call minpac#add('junegunn/fzf', { 'do': { -> fzf#install() } })
 call minpac#add('junegunn/fzf.vim')
-call minpac#add('justinmk/vim-sneak') " Delete
 call minpac#add('k-takata/minpac', {'type': 'opt'})
 call minpac#add('leafgarland/typescript-vim')
 call minpac#add('lifepillar/vim-solarized8')
 call minpac#add('machakann/vim-highlightedyank')
 call minpac#add('maximbaz/lightline-ale')
 call minpac#add('maxmellon/vim-jsx-pretty')
+call minpac#add('morhetz/gruvbox')
 call minpac#add('pangloss/vim-javascript')
-call minpac#add('pbrisbin/vim-mkdir') " Delete
+call minpac#add('preservim/nerdtree')
 call minpac#add('raimondi/delimitmate')
 call minpac#add('shougo/deoplete.nvim')
-call minpac#add('slim-template/vim-slim') " Delete
+call minpac#add('sjl/badwolf')
+call minpac#add('srcery-colors/srcery-vim')
+call minpac#add('tomasr/molokai')
 call minpac#add('tomtom/tcomment_vim')
 call minpac#add('tpope/vim-bundler')
 call minpac#add('tpope/vim-dispatch')
 call minpac#add('tpope/vim-endwise')
 call minpac#add('tpope/vim-eunuch')
 call minpac#add('tpope/vim-fugitive')
-call minpac#add('tpope/vim-projectionist') " Delete
 call minpac#add('tpope/vim-rails')
 call minpac#add('tpope/vim-rake')
 call minpac#add('tpope/vim-repeat')
 call minpac#add('tpope/vim-rhubarb')
 call minpac#add('tpope/vim-surround')
-call minpac#add('tpope/vim-unimpaired') " Delete
+call minpac#add('tpope/vim-unimpaired')
 call minpac#add('vim-ruby/vim-ruby')
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
@@ -225,7 +236,7 @@ endif
 let g:highlightedyank_highlight_duration = 200
 
 let g:lightline = {
-\   'colorscheme': 'solarized',
+\   'colorscheme': 'gruvbox',
 \ }
 let g:lightline.component_expand = {
 \   'linter_checking': 'lightline#ale#checking',
@@ -254,7 +265,7 @@ let g:ale_linters = {
 \   'typescript': ['tsserver', 'tslint', 'eslint'],
 \   'vue': ['eslint'],
 \   'eruby': ['erb'],
-\   'ruby': ['rubocop, standardrb'],
+\   'ruby': ['rubocop', 'solargraph'],
 \   'python': ['flake8', 'pyls']
 \ }
 let g:ale_fixers = {
@@ -262,7 +273,7 @@ let g:ale_fixers = {
 \   'javascript': ['prettier'],
 \   'typescript': ['prettier'],
 \   'vue': ['prettier'],
-\   'ruby': ['rubocop', 'standardrb'],
+\   'ruby': ['rubocop'],
 \   'python': ['black', 'isort'],
 \   'css': ['prettier'],
 \   'html': ['prettier']
@@ -292,3 +303,8 @@ let g:gitgutter_sign_removed = '_'
 let g:gitgutter_sign_removed_first_line = '^'
 let g:gitgutter_sign_modified_removed = '│'
 let g:gitgutter_override_sign_column_highlight = 1
+
+let NERDTreeShowHidden=1
+let NERDTreeAutoDeleteBuffer = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1

@@ -10,6 +10,7 @@ brew "kubectl"
 cask "google-cloud-sdk"
 brew "sqlite"
 brew "ansible"
+brew "httpie"
 brew "postgresql", restart_service: true
 brew "redis", restart_service: true
 
@@ -19,11 +20,14 @@ cask "appcleaner"
 cask "the-unarchiver"
 cask "tunnelbear"
 cask "transmission"
-cask "zoomus"
+cask "zoom"
 cask "sublime-text"
 cask "sublime-merge"
 cask "visual-studio-code"
 cask "docker"
+cask "firefox-developer-edition"
+cask "fluor"
+cask "anki"
 
 # Mac App Store items
 brew "mas"

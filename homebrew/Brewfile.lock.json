@@ -7,6 +7,10 @@
           "cellar": ":any_skip_relocation",
           "prefix": "/usr/local",
           "files": {
+            "big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/hivemind-1.0.6.big_sur.bottle.tar.gz",
+              "sha256": "792e06f04a8f0742bb4f0467c24d42a92cce9c403827ebc2055a0a891c5c07f8"
+            },
             "catalina": {
               "url": "https://homebrew.bintray.com/bottles/hivemind-1.0.6.catalina.bottle.tar.gz",
               "sha256": "ed80238e557ca71f115b2b3cd5031bfac16a3d02d8b37b386b629d89dd26af48"
@@ -28,22 +32,26 @@
       },
       "kubectl": null,
       "postgresql": {
-        "version": "13.0",
+        "version": "13.1",
         "bottle": {
           "cellar": "/usr/local/Cellar",
           "prefix": "/usr/local",
           "files": {
+            "big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/postgresql-13.1.big_sur.bottle.tar.gz",
+              "sha256": "e4d523c7171f265b340df22a88ff78e6fba4aed46afcf3f4e5bd4ac4b94e8a16"
+            },
+            "arm64_big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/postgresql-13.1.arm64_big_sur.bottle.tar.gz",
+              "sha256": "6939bfae5047a585985ef45d71a04b88ef8ccbced5d35a3ccce4a9aa452087aa"
+            },
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/postgresql-13.0.catalina.bottle.tar.gz",
-              "sha256": "0c8e80038485e0e398210b87b309da03e409dab0b0f78d2b7a3be9f51a3d30c0"
+              "url": "https://homebrew.bintray.com/bottles/postgresql-13.1.catalina.bottle.tar.gz",
+              "sha256": "13939e578f0a48c78966c2527dc48391b19650b51f7489767b5237e3bab16793"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/postgresql-13.0.mojave.bottle.tar.gz",
-              "sha256": "74499938a2f7bde3c33fb158161566eaf61a70975e69d1c59b491deff94826dd"
-            },
-            "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/postgresql-13.0.high_sierra.bottle.tar.gz",
-              "sha256": "5175c72b20e73566ef1dadc07286a68b70ae4f31eacc484ad11c4f90f39fd840"
+              "url": "https://homebrew.bintray.com/bottles/postgresql-13.1.mojave.bottle.tar.gz",
+              "sha256": "1826c98f6d117bd040fbb307c1c95dfa2dee6ff8647ec8010e1b79386aa59eb0"
             }
           }
         },
@@ -57,6 +65,14 @@
           "cellar": ":any",
           "prefix": "/usr/local",
           "files": {
+            "big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/redis-6.0.9.big_sur.bottle.tar.gz",
+              "sha256": "cbe0aa73da42e5e64944bb7d13015e3f8639984903b8bba83e1d3b5f2d214b60"
+            },
+            "arm64_big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/redis-6.0.9.arm64_big_sur.bottle.tar.gz",
+              "sha256": "8403df440507cf8ca79ea0c56f6c6645605d219a08dd0aaeb0101e49a062f8af"
+            },
             "catalina": {
               "url": "https://homebrew.bintray.com/bottles/redis-6.0.9.catalina.bottle.tar.gz",
               "sha256": "673b1485f012e3c9a509c913d175e18451ddab50eca0c140cac84828f6610411"
@@ -81,6 +97,10 @@
           "cellar": ":any",
           "prefix": "/usr/local",
           "files": {
+            "big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/mas-1.7.1.big_sur.bottle.tar.gz",
+              "sha256": "432091a534d0a1f753fcf953fb1c20c10ef5762b7f8922cb378c3dcd36898d30"
+            },
             "catalina": {
               "url": "https://homebrew.bintray.com/bottles/mas-1.7.1.catalina.bottle.tar.gz",
               "sha256": "e6de2f98ebd21885a9827664fe1b7eea5516a7fd75d5b7383e3a9b088591a27f"
@@ -93,43 +113,51 @@
         }
       },
       "ansible": {
-        "version": "2.9.15",
+        "version": "2.10.4",
         "bottle": {
           "cellar": ":any",
           "prefix": "/usr/local",
           "files": {
+            "big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/ansible-2.10.4.big_sur.bottle.tar.gz",
+              "sha256": "f37d6b4d9f678ad34d8e6842354dcc64ca6777a925333eaf1071dd14e0b02ebd"
+            },
+            "arm64_big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/ansible-2.10.4.arm64_big_sur.bottle.tar.gz",
+              "sha256": "f31658515f119adb69dcdd58dc9adfcc36421ff72f24b04e26f0b47e6add5fc0"
+            },
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/ansible-2.9.15.catalina.bottle.tar.gz",
-              "sha256": "61bac44c5ad225f9d507016517904b29f67cc7e62adcb2148c14da1013acf471"
+              "url": "https://homebrew.bintray.com/bottles/ansible-2.10.4.catalina.bottle.tar.gz",
+              "sha256": "6c4fe1373f9fac5367b970fd2a361295d970ff40977f9161806e46ef676320eb"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/ansible-2.9.15.mojave.bottle.tar.gz",
-              "sha256": "fe8b051d6d82169978464be3c91449906895c3d88a9e7dc0be6f37aef7df99c1"
-            },
-            "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/ansible-2.9.15.high_sierra.bottle.tar.gz",
-              "sha256": "047026725fd12c752b2572f5f22755983da0839ebf8261ba221984e428b7b48a"
+              "url": "https://homebrew.bintray.com/bottles/ansible-2.10.4.mojave.bottle.tar.gz",
+              "sha256": "90ee5b88d11409334cf150d14d85cbd5dc2d7564380b1765977e90694765bef2"
             }
           }
         }
       },
       "sqlite": {
-        "version": "3.33.0",
+        "version": "3.34.0",
         "bottle": {
           "cellar": ":any",
           "prefix": "/usr/local",
           "files": {
+            "big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/sqlite-3.34.0.big_sur.bottle.tar.gz",
+              "sha256": "cdf256befc0752680a6742469b217e0dae42c691cb3565923d4bf2c5a0583152"
+            },
+            "arm64_big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/sqlite-3.34.0.arm64_big_sur.bottle.tar.gz",
+              "sha256": "0a8e636f4fe9870f64c15b40fa1e1e0027431d39690f117cad7456e84b89582c"
+            },
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/sqlite-3.33.0.catalina.bottle.tar.gz",
-              "sha256": "78566572373e0010a52729c1b41f7503f4e86acc67e7a37bafe091a6ddc36147"
+              "url": "https://homebrew.bintray.com/bottles/sqlite-3.34.0.catalina.bottle.tar.gz",
+              "sha256": "7e04c1fcd0294ec7625e43eea05714d8bb4d15d24675c99484f1403fdcb438ec"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/sqlite-3.33.0.mojave.bottle.tar.gz",
-              "sha256": "0d4a34731923310528f3ca79418eb7149cf12eda3b3043e5ba11b040ca5f602f"
-            },
-            "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/sqlite-3.33.0.high_sierra.bottle.tar.gz",
-              "sha256": "9fd2f150b96a7ca378f84e09a2715c7a87c1b95a3a3a241a25f57d22ab0be781"
+              "url": "https://homebrew.bintray.com/bottles/sqlite-3.34.0.mojave.bottle.tar.gz",
+              "sha256": "64729f1390a8379a9c7e6c8579dda0a0c450328868ebeb7e7e632aa448bda2d1"
             }
           }
         }
@@ -173,7 +201,7 @@
         }
       },
       "tunnelbear": {
-        "version": "4.0.2",
+        "version": null,
         "options": {
           "full_name": "tunnelbear",
           "args": {
@@ -191,7 +219,7 @@
         }
       },
       "zoomus": {
-        "version": "5.4.58698.1027",
+        "version": "5.4.58903.1122,alias",
         "options": {
           "full_name": "zoomus",
           "args": {
@@ -234,26 +262,62 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "firefox-developer-edition": {
+        "version": "latest",
+        "options": {
+          "full_name": "firefox-developer-edition",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "fluor": {
+        "version": "2.1.0",
+        "options": {
+          "full_name": "fluor",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "anki": {
+        "version": "2.1.37",
+        "options": {
+          "full_name": "anki",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "zoom": {
+        "version": "5.4.59780.1220",
+        "options": {
+          "full_name": "zoom",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
       }
     },
     "tap": {
       "homebrew/bundle": {
-        "revision": "a8aa5445de31d655508a52223ed20e6c09e121a2"
+        "revision": "19e06aec198dd9366486c668abaae7b548a3b305"
       },
       "homebrew/cask": {
-        "revision": "735f8ad4040543108ee89d3ffc1d0a8580a92432"
+        "revision": "c6e3c97dbb6d52bc5843d3f0b372915fcc0b1975"
       },
       "homebrew/core": {
-        "revision": "995d24a99101a3ffa8f9701d5adfd839f976409d"
+        "revision": "af2d799bdd6e00633db11bea02bb66b4469b1c13"
       },
       "homebrew/services": {
-        "revision": "f6313045d710df06b1e40597f5820026486a55ee"
+        "revision": "302f7340790efe3763788f062c235f499b5e8827"
       }
     },
     "mas": {
       "Telegram": {
         "id": "747648890",
-        "version": "7.2.4"
+        "version": "7.3"
       },
       "Flow": {
         "id": "1423210932",
@@ -272,12 +336,12 @@
         "macOS": "10.15.7"
       },
       "big_sur": {
-        "HOMEBREW_VERSION": "2.5.9",
+        "HOMEBREW_VERSION": "2.7.1",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "995d24a99101a3ffa8f9701d5adfd839f976409d",
-        "CLT": "12.0.32.21",
+        "Homebrew/homebrew-core": "af2d799bdd6e00633db11bea02bb66b4469b1c13",
+        "CLT": "12.3.0.0.1.1607026830",
         "Xcode": "12.2",
-        "macOS": "11.0.1"
+        "macOS": "11.1"
       },
       "dunno": {
         "HOMEBREW_VERSION": "2.5.9",
