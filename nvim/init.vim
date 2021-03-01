@@ -1,12 +1,11 @@
 syntax on
-colorscheme solarized8_high
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_invert_selection = 0
+let g:gruvbox_undercurl = 0
 let g:gruvbox_sign_column = 'bg0'
 colorscheme gruvbox
-" let g:srcery_underline = 0
-" colorscheme srcery
 
+" Remove annoying `~` on signcolumn after buffer end
 hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 
 set clipboard^=unnamed,unnamedplus
@@ -167,21 +166,8 @@ noremap <leader>b :Buffers<CR>
 noremap <leader>и :Buffers<CR>
 
 " NERDTree
-" nnoremap <leader>n :NERDTreeFocus<CR>
-" nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
-
-function! RenameFile()
-  let old_name = expand('%')
-  let new_name = input('New file name: ', expand('%'), 'file')
-  if new_name != '' && new_name != old_name
-    exec ':saveas ' . new_name
-    exec ':silent !rm ' . old_name
-    redraw!
-  endif
-endfunction
-map <Leader>n :call RenameFile()<cr>
 
 packadd minpac
 call minpac#init()
@@ -218,6 +204,7 @@ call minpac#add('tpope/vim-rhubarb')
 call minpac#add('tpope/vim-surround')
 call minpac#add('tpope/vim-unimpaired')
 call minpac#add('vim-ruby/vim-ruby')
+call minpac#add('chriskempson/base16-vim')
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
@@ -225,7 +212,8 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
 
   " Use ag in fzf for listing files. Lightning fast and respects .gitignore
-  let $FZF_DEFAULT_COMMAND = 'ag --literal --files-with-matches --nocolor --hidden -g ""'
+  let $FZF_DEFAULT_COMMAND = 'ag --literal --files-with-matches --nocolor --hidden --ignore .git -g ""'
+  let $FZF_DEFAULT_OPTS    = '--layout=reverse'
 
   if !exists(":Ag")
     command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
@@ -308,3 +296,7 @@ let NERDTreeShowHidden=1
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
+
+let g:fzf_buffers_jump = 1
+let g:fzf_preview_window = []
+let g:fzf_layout = { 'window': { 'width': 0.5, 'height': 0.4, 'yoffset': 0.1, 'border': 'sharp' } }
