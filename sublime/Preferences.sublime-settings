@@ -1,0 +1,16 @@
+{
+  "fold_buttons": false,
+  "font_size": 15,
+  "ignored_packages":
+  [
+    "Six",
+    "Vintage",
+    "Vintageous"
+  ],
+  "neovintageous_build_version": 11100,
+  "tab_size": 2,
+  "translate_tabs_to_spaces": true,
+  "ensure_newline_at_eof_on_save": true,
+  "highlightedyank_duration": 200,
+  "vintageous_use_sys_clipboard": true
+}
