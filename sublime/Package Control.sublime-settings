@@ -6,7 +6,16 @@
 	"installed_packages":
 	[
 		"All Autocomplete",
-		"NeoVintageous",
-		"Package Control"
+		"EditorConfig",
+		"Package Control",
+		"SideBarTools",
+		"SublimeLinter",
+		"SublimeLinter-annotations",
+		"SublimeLinter-eslint",
+		"SublimeLinter-json",
+		"SublimeLinter-rubocop",
+		"SublimeLinter-ruby",
+		"SublimeLinter-stylelint",
+		"TypeScript"
 	]
 }

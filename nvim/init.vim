@@ -1,17 +1,3 @@
-syntax on
-let g:gruvbox_contrast_dark = 'hard'
-let g:gruvbox_invert_selection = 0
-let g:gruvbox_undercurl = 0
-let g:gruvbox_sign_column = 'bg0'
-colorscheme gruvbox
-
-" Remove annoying `~` on signcolumn after buffer end
-hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
-
-set clipboard^=unnamed,unnamedplus
-
-let mapleader = " "
-
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
 set nowritebackup
@@ -27,63 +13,35 @@ set updatetime=100
 set lazyredraw
 set nocursorline
 set ttyfast
-
 set noshowmode
 set mouse=a
-set signcolumn=yes
-
-" Open new split panes to right and bottom, which feels more natural
-set splitbelow
+set splitbelow " Open new split panes to right and bottom, which feels more natural
 set splitright
-
-" softtabs, 2 spaces
-set tabstop=2
+set tabstop=2 " softtabs, 2 spaces
 set shiftwidth=2
 set shiftround
 set expandtab
-
-" Numbers
-set number
-set numberwidth=4
-
-" Use one space, not two, after punctuation.
-set nojoinspaces
-
-" Display extra whitespace
-set list listchars=tab:»·,trail:·,nbsp:·
-
-let &t_SI.="\e[6 q" "SI = INSERT mode
-let &t_SR.="\e[4 q" "SR = REPLACE mode
-let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
-
-" Tweaks for browsing
-let g:netrw_banner=0        " disable annoying banner
-let g:netrw_altv=1          " open splits to the right
-let g:netrw_preview=1
-let g:netrw_alto=0
-
+set signcolumn=yes
+set number " Numbers
+set numberwidth=3
+set nojoinspaces " Use one space, not two, after punctuation.
+set list listchars=tab:>>,trail:·,nbsp:· " Display extra whitespace
+set nocompatible
+set termguicolors
+set fillchars=vert:\│,eob:\  " Remove annoying `~` on signcolumn after buffer end
+set inccommand=nosplit
+set diffopt+=vertical
+set clipboard^=unnamed,unnamedplus
 set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
 
 filetype plugin indent on
 
-if has('nvim')
-  set inccommand=nosplit
+syntax on
+colorscheme onehalfdark
 
-  " always use vertical diffs
-  set diffopt+=vertical
-endif
-
-if &compatible
-  set nocompatible
-end
-
-if !has('gui_running')
-  " set t_Co=8 t_md=
-  set termguicolors
-endif
-
-autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
-autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+let &t_SI.="\e[6 q" "SI = INSERT mode
+let &t_SR.="\e[4 q" "SR = REPLACE mode
+let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 
 augroup vimrcEx
   autocmd!
@@ -100,18 +58,18 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile *.md        set filetype=markdown
   autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
   autocmd BufRead,BufNewFile *.tsx,*.jsx set filetype=typescript.tsx
-augroup END
 
-augroup TerminalStuff
   autocmd TermOpen * setlocal nonumber norelativenumber
+
+  autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+  autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 augroup END
 
 " All necessary mappings
-nnoremap <leader><leader> <c-^>
+let mapleader = " "
 nnoremap <silent> <leader>/ :TComment<CR>
 nnoremap <silent> <Leader>w :w<CR>
 nnoremap <silent> <Leader>ц :w<CR>
-nnoremap <C-t> :tabnew<CR>
 nnoremap <Leader>nt :tabnew<CR>
 noremap <leader>1 1gt
 noremap <leader>2 2gt
@@ -130,6 +88,7 @@ noremap <leader>vi :tabe ~/.config/nvim/init.vim<CR>
 noremap <leader>S :source ~/.config/nvim/init.vim<CR>:call minpac#update()<CR>
 noremap <leader>nh :noh<CR>
 noremap <leader>тр :noh<CR>
+noremap <C-n> :noh<CR>
 tnoremap <ESC> <C-\><C-n><C-w><C-p>
 nnoremap <silent>K :ALEHover<CR>
 nnoremap <leader>de :ALEDetail<CR>
@@ -137,6 +96,7 @@ nnoremap ]r :ALENextWrap<CR>
 nnoremap [r :ALEPreviousWrap<CR>
 nnoremap <F2> :ALERename<CR>
 nnoremap <F12> :ALEGoToDefinition<CR>
+nnoremap <leader>re :ALEFindReferences<CR>
 inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
@@ -167,44 +127,39 @@ noremap <leader>и :Buffers<CR>
 
 " NERDTree
 nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
+nnoremap <C-T> :NERDTreeFind<CR>
 
 packadd minpac
 call minpac#init()
+call minpac#add('k-takata/minpac', {'type': 'opt'})
+
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('dense-analysis/ale')
 call minpac#add('itchyny/lightline.vim')
 call minpac#add('janko-m/vim-test')
 call minpac#add('junegunn/fzf', { 'do': { -> fzf#install() } })
 call minpac#add('junegunn/fzf.vim')
-call minpac#add('k-takata/minpac', {'type': 'opt'})
 call minpac#add('leafgarland/typescript-vim')
-call minpac#add('lifepillar/vim-solarized8')
 call minpac#add('machakann/vim-highlightedyank')
-call minpac#add('maximbaz/lightline-ale')
 call minpac#add('maxmellon/vim-jsx-pretty')
-call minpac#add('morhetz/gruvbox')
 call minpac#add('pangloss/vim-javascript')
 call minpac#add('preservim/nerdtree')
 call minpac#add('raimondi/delimitmate')
 call minpac#add('shougo/deoplete.nvim')
-call minpac#add('sjl/badwolf')
-call minpac#add('srcery-colors/srcery-vim')
-call minpac#add('tomasr/molokai')
 call minpac#add('tomtom/tcomment_vim')
 call minpac#add('tpope/vim-bundler')
 call minpac#add('tpope/vim-dispatch')
 call minpac#add('tpope/vim-endwise')
-call minpac#add('tpope/vim-eunuch')
-call minpac#add('tpope/vim-fugitive')
 call minpac#add('tpope/vim-rails')
 call minpac#add('tpope/vim-rake')
 call minpac#add('tpope/vim-repeat')
-call minpac#add('tpope/vim-rhubarb')
 call minpac#add('tpope/vim-surround')
-call minpac#add('tpope/vim-unimpaired')
 call minpac#add('vim-ruby/vim-ruby')
-call minpac#add('chriskempson/base16-vim')
+
+call minpac#add('lifepillar/vim-solarized8')
+call minpac#add('morhetz/gruvbox')
+call minpac#add('sonph/onehalf', { 'subdir': 'vim' })
+call minpac#add('rakr/vim-two-firewatch')
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
@@ -221,32 +176,13 @@ if executable('ag')
   endif
 endif
 
+let g:fzf_buffers_jump = 1
+let g:fzf_preview_window = []
+let g:fzf_layout = { 'window': { 'width': 0.5, 'height': 0.4, 'yoffset': 0.1, 'border': 'sharp' } }
+
 let g:highlightedyank_highlight_duration = 200
 
-let g:lightline = {
-\   'colorscheme': 'gruvbox',
-\ }
-let g:lightline.component_expand = {
-\   'linter_checking': 'lightline#ale#checking',
-\   'linter_infos': 'lightline#ale#infos',
-\   'linter_warnings': 'lightline#ale#warnings',
-\   'linter_errors': 'lightline#ale#errors',
-\   'linter_ok': 'lightline#ale#ok',
-\   'gitbranch': 'FugitiveHead',
-\ }
-let g:lightline.active = {
-\   'left': [
-\     ['mode', 'paste'],
-\     ['gitbranch'],
-\     ['filename', 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok'],
-\   ],
-\   'right': [['lineinfo'], ['percent'], ['filetype']]
-\ }
-let g:lightline#ale#indicator_checking = "..."
-let g:lightline#ale#indicator_infos = "i:"
-let g:lightline#ale#indicator_warnings = "w:"
-let g:lightline#ale#indicator_errors = "e:"
-let g:lightline#ale#indicator_ok = "ok"
+let g:lightline = { 'colorscheme': 'onehalfdark' }
 
 let g:ale_linters = {
 \   'javascript': ['eslint'],
@@ -267,13 +203,7 @@ let g:ale_fixers = {
 \   'html': ['prettier']
 \ }
 let g:ale_python_pyls_config = {
-\   'pyls': {
-\     'plugins': {
-\       'pycodestyle': {
-\         'enabled': v:false
-\       }
-\     }
-\   },
+\   'pyls': { 'plugins': { 'pycodestyle': { 'enabled': v:false } } },
 \ }
 let g:ale_completion_autoimport = 1
 let g:ale_completion_max_suggestions = 10
@@ -281,6 +211,11 @@ let g:ale_fix_on_save = 1
 let g:ale_sign_error = "\u2022"
 let g:ale_sign_warning = "\u2022"
 let g:ale_list_window_size = 5
+let g:ale_floating_preview = 1
+let g:ale_floating_window_border = []
+let g:ale_hover_cursor = 1
+let g:ale_virtualtext_cursor = 1
+let g:ale_virtualtext_prefix = ' > '
 
 let g:deoplete#enable_at_startup = 1
 set completeopt-=preview
@@ -296,7 +231,3 @@ let NERDTreeShowHidden=1
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
-
-let g:fzf_buffers_jump = 1
-let g:fzf_preview_window = []
-let g:fzf_layout = { 'window': { 'width': 0.5, 'height': 0.4, 'yoffset': 0.1, 'border': 'sharp' } }

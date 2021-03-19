@@ -12,22 +12,6 @@ function git_branch() {
     fi
 }
 
-function deploy_feature_to_prod {
-  echo -e "${GREEN}> Checkout master${NOCOLOR}"
-  git checkout master
-  echo -e "${GREEN}> Pull origin master${NOCOLOR}"
-  git pull origin master
-  echo -e "${GREEN}> Add internal${NOCOLOR}"
-  git remote add internal git@gitlab-rnd.tcsbank.ru:tj-features/$1.git
-  sleep 15
-  echo -e "${GREEN}> Set internal url${NOCOLOR}"
-  git remote set-url internal git@gitlab-rnd.tcsbank.ru:tj-features/$1.git
-  sleep 15
-  echo -e "${GREEN}> Push internal master${NOCOLOR}"
-  git push internal master
-  echo -e "${GREEN}> All done${NOCOLOR}"
-}
-
 alias cat="bat"
 alias ls="exa"
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
