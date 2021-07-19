@@ -13,7 +13,7 @@ function git_branch() {
 }
 
 alias cat="bat"
-alias ls="exa"
+alias ls="exa -aF"
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias s.="subl ."
 alias v="nvim"
@@ -26,7 +26,6 @@ alias gb="git branch "
 alias gc="git commit"
 alias gcm="git commit -m"
 alias gd="git diff"
-alias go="git checkout "
 alias gco="git checkout "
 alias gull="git pull --ff-only"
 alias gush="git push"
@@ -46,6 +45,7 @@ zstyle ":completion:*" menu select=1 _complete _ignored _approximate
 export EDITOR="nvim"
 export LANG=en_US.UTF-8 # copy cyrillic text in vim
 export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow --exclude .git"
+export BAT_THEME="OneHalfDark"
 export PATH="/usr/local/opt/node@14/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
@@ -54,6 +54,8 @@ autoload -Uz compinit && compinit
 
 eval "$(rbenv init -)"
 
-export CLOUDSDK_PYTHON="/usr/local/opt/python@3.8/libexec/bin/python"
-source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools

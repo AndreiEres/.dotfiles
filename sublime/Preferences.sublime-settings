@@ -1,5 +1,4 @@
 {
-	"color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
 	"ensure_newline_at_eof_on_save": true,
 	"fold_buttons": false,
 	"folder_exclude_patterns":
@@ -13,19 +12,12 @@
 		"tmp",
 		"log"
 	],
-	"font_options":
-	[
-		"no_italic"
-	],
 	"font_size": 15,
 	"ignored_packages":
 	[
 	],
 	"rulers":
 	[
-		80,
-		100,
-		120
 	],
 	"tab_size": 2,
 	"theme": "Default.sublime-theme",
@@ -33,5 +25,6 @@
 	"trim_trailing_white_space_on_save": true,
 	"vintage_ctrl_keys": true,
 	"vintage_start_in_command_mode": true,
-	"vintage_use_clipboard": true
+	"vintage_use_clipboard": true,
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
 }

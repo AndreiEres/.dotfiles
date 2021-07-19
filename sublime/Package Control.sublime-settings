@@ -16,6 +16,5 @@
 		"SublimeLinter-rubocop",
 		"SublimeLinter-ruby",
 		"SublimeLinter-stylelint",
-		"TypeScript"
-	]
+	],
 }
