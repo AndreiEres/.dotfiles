@@ -1,5 +1,11 @@
 call plug#begin()
-Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'morhetz/gruvbox'
+
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+
+Plug 'nvim-lua/plenary.nvim'
+Plug 'lewis6991/gitsigns.nvim'
 call plug#end()
 
 set ignorecase
@@ -10,8 +16,15 @@ set clipboard^=unnamed,unnamedplus
 set tabstop=2
 set shiftwidth=2
 set expandtab
+set noswapfile
 
-colorscheme onehalfdark
+set signcolumn=yes:1
+
+set termguicolors
+
+let g:gruvbox_invert_selection = 0
+let g:gruvbox_sign_column='bg0'
+colorscheme gruvbox
 
 let &t_SI.="\e[6 q" "SI = INSERT mode
 let &t_SR.="\e[4 q" "SR = REPLACE mode
@@ -49,3 +62,11 @@ augroup highlight_yank
   autocmd!
   au TextYankPost * silent! lua vim.highlight.on_yank{higroup='IncSearch', timeout=200}
 augroup END
+
+autocmd TermOpen * setlocal nonumber norelativenumber
+
+if !exists('g:vscode')
+lua << EOF
+require('gitsigns').setup()
+EOF
+endif

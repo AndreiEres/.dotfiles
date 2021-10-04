@@ -1,10 +1,13 @@
 [user]
   name = Andrei Eres
-  email = andrei.eres@ya.ru
+  email = eresav@me.com
+  signingkey = 0xCEB8320F530C8B2DA5CB12DF9CAF44751E851778
+
+[commit]
+  gpgsign = true
 
 [core]
   excludesfile = /Users/andreieres/.gitignore_global
-  pager = delta
 
 [color]
   ui = true
@@ -18,9 +21,19 @@
 [alias]
   lg = log --color --graph --pretty=format:'%C(green)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
+[pager]
+  diff = delta
+  log = delta
+  reflog = delta
+  show = delta
+
 [interactive]
-  diffFilter = delta --color-only
+  diffFilter = delta --color-only --features=interactive
 
 [delta]
   line-numbers = true
-  width = 80
+  width = 140
+  hunk-header-style = omit
+
+[pull]
+	ff = only
