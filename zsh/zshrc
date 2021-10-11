@@ -112,7 +112,7 @@ alias where-localhost="ifconfig | grep 'inet ' | grep -v 127.0.0.1"
 
 export BAT_THEME="gruvbox-dark"
 
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
 
 export PATH="$HOME/.poetry/bin:$PATH"
 

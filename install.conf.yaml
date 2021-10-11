@@ -10,4 +10,3 @@
     ~/.config/git/config: git/config
     ~/.config/nvim/init.vim: nvim/init.vim
     ~/.tmux.conf: tmux/tmux.conf
-    '~/Library/Application Support/Sublime Text 3/Packages/User': sublime
