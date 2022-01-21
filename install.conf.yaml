@@ -9,4 +9,6 @@
     ~/.zshrc: zsh/zshrc
     ~/.config/git/config: git/config
     ~/.config/nvim/init.vim: nvim/init.vim
+    ~/.config/nvim/coc-settings.json: nvim/coc-settings.json
+    ~/.config/nvim/colors/code.vim: nvim/colors/code.vim
     ~/.tmux.conf: tmux/tmux.conf

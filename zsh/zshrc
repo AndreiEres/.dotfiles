@@ -112,9 +112,14 @@ alias where-localhost="ifconfig | grep 'inet ' | grep -v 127.0.0.1"
 
 export BAT_THEME="gruvbox-dark"
 
-# eval "$(rbenv init -)"
+eval "$(rbenv init -)"
 
 export PATH="$HOME/.poetry/bin:$PATH"
 
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+eval "$(pyenv init -)"

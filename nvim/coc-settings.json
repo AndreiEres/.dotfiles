@@ -1,0 +1,14 @@
+{
+  "coc.preferences.jumpCommand": "tab drop",
+  "coc.preferences.formatOnSaveFiletypes": ["python", "typescript", "typescriptreact"],
+  "diagnostic.enableHighlightLineNumber": false,
+  "diagnostic.errorSign": "\u2022",
+  "diagnostic.hintSign": "\u2022",
+  "diagnostic.infoSign": "\u2022",
+  "diagnostic.warningSign": "\u2022",
+  "hover.target": "echo",
+  "pyright.organizeimports.provider": "isort",
+  "python.analysis.typeCheckingMode": "off",
+  "python.formatting.provider": "black",
+  "python.linting.flake8Enabled": true
+}
