@@ -117,7 +117,7 @@ call s:h("SpellRare",       {"gui": "underline", "sp": s:red})
 call s:h("SpellLocal",      {"gui": "underline", "sp": s:green})
 
 call s:h("Pmenu",           {"fg": s:norm, "bg": s:visual})
-call s:h("PmenuSel",        {"fg": s:norm, "bg": s:blue})
+call s:h("PmenuSel",        {"fg": s:blue, "bg": s:visual})
 call s:h("PmenuSbar",       {"fg": s:norm, "bg": s:visual})
 call s:h("PmenuThumb",      {"fg": s:norm, "bg": s:visual})
 call s:h("TabLine",         {"fg": s:light_gray, "bg": s:visual})
@@ -137,11 +137,6 @@ call s:h("htmlH4",          {"bg": s:bg, "fg": s:norm})
 call s:h("htmlH5",          {"bg": s:bg, "fg": s:norm})
 call s:h("htmlH6",          {"bg": s:bg, "fg": s:norm})
 
-call s:h("Pmenu",           {"bg": s:comment, "fg": s:norm})
-call s:h("PmenuSel",        {"bg": s:comment, "fg": s:blue})
-call s:h("PmenuSbar",       {"bg": s:comment, "fg": s:norm})
-call s:h("PmenuThumb",      {"bg": s:comment, "fg": s:norm})
-
 call s:h("CocErrorSign",    {"fg": s:error})
 call s:h("CocWarningSign",  {"fg": s:warning})
 call s:h("Conceal",         {"gui": "underline"})
@@ -158,3 +153,5 @@ hi! link typescriptArrayMethod Normal
 hi! link typescriptFuncType Normal
 
 hi! link jsxComponentName Keyword
+
+hi! link pythonImport Keyword

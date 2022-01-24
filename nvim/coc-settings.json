@@ -1,5 +1,5 @@
 {
-  "coc.preferences.jumpCommand": "tab drop",
+  "coc.preferences.jumpCommand": "tabe",
   "coc.preferences.formatOnSaveFiletypes": ["python", "typescript", "typescriptreact"],
   "diagnostic.enableHighlightLineNumber": false,
   "diagnostic.errorSign": "\u2022",
