@@ -26,7 +26,7 @@ let s:gray                = { "gui": "#808080", "cterm": "243" }
 let s:light_gray          = { "gui": "#c6c6c6", "cterm": "250" }
 let s:red                 = { "gui": "#f14c4c", "cterm": "1"   }
 let s:blue                = { "gui": "#569cd6", "cterm": "4"   }
-let s:green               = { "gui": "#587c0c", "cterm": "10"  }
+let s:green               = { "gui": "#0dbc79", "cterm": "10"  }
 let s:yellow              = { "gui": "#ffcc00", "cterm": "11"  }
 let s:brown               = { "gui": "#CE9178", "cterm": "3"   }
 
@@ -85,7 +85,7 @@ call s:h("Ignore",          {"fg": s:bg})
 call s:h("Error",           {"fg": s:actual_white, "bg": s:red, "cterm": "bold"})
 call s:h("Todo",            {"fg": s:actual_white, "bg": s:red, "gui": "bold", "cterm": "bold"})
 call s:h("SpecialKey",      {"fg": s:green})
-call s:h("NonText",         {"fg": s:gray})
+call s:h("NonText",         {"fg": s:bg})
 call s:h("Directory",       {"fg": s:blue})
 call s:h("ErrorMsg",        {"fg": s:red})
 call s:h("IncSearch",       {"bg": s:visual})
@@ -93,7 +93,7 @@ call s:h("Search",          {"bg": s:visual})
 call s:h("MoreMsg",         {"fg": s:gray, "cterm": "bold", "gui": "bold"})
 hi! link ModeMsg MoreMsg
 call s:h("LineNr",          {"fg": s:comment})
-call s:h("CursorLineNr",    {"fg": s:blue, "bg": s:visual})
+call s:h("CursorLineNr",    {"fg": s:light_gray, "bg": s:bg})
 call s:h("Question",        {"fg": s:red})
 call s:h("StatusLine",      {"bg": s:visual})
 call s:h("StatusLineNC",    {"bg": s:visual, "fg": s:gray})
@@ -123,8 +123,8 @@ call s:h("PmenuThumb",      {"fg": s:norm, "bg": s:visual})
 call s:h("TabLine",         {"fg": s:light_gray, "bg": s:visual})
 call s:h("TabLineSel",      {"fg": s:actual_white, "bg": s:bg})
 call s:h("TabLineFill",     {"fg": s:norm, "bg": s:visual})
-call s:h("CursorColumn",    {"bg": s:visual})
-call s:h("CursorLine",      {"fg": s:norm, "bg": s:visual})
+call s:h("CursorColumn",    {"bg": s:bg})
+call s:h("CursorLine",      {"bg": s:visual})
 call s:h("ColorColumn",     {"bg": s:comment})
 
 call s:h("MatchParen",      {"bg": s:comment, "fg": s:norm})

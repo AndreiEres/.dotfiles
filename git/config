@@ -32,6 +32,8 @@
   diffFilter = delta --color-only --features=interactive
 
 [delta]
+  light = true
+  syntax-theme = GitHub
   line-numbers = true
   width = 140
   hunk-header-style = omit
